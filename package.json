@@ -1,0 +1,21 @@
+{
+  "name": "onliffe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Online word processor built with Rust, WebAssembly, React and Server.js",
+  "scripts": {
+    "pretest": "xo",
+    "test": "lerna run test",
+    "lint": "npm run -s pretest",
+    "build": "lerna run build"
+  },
+  "author": "thatlittlegit",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "lerna": "^2.7.1",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "prettier": true
+  }
+}
