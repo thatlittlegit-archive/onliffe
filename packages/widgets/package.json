@@ -7,6 +7,8 @@
     "test": "karma start",
     "build": "browserify -r ./src/index.js:@onliffe/widgets -t babelify src/index.js -o dist.js"
   },
+  "main": "dist.js",
+  "files": ["../../LICENSE", "dist.js"],
   "author": "thatlittlegit",
   "license": "BSD-3-Clause",
   "devDependencies": {
