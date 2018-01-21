@@ -5,10 +5,11 @@ module.exports = function (config) {
 		files: [
 			'dist.js',
 			'test/header.js',
-			'test/*.test.js'
+			'test/*.test.jsx'
 		],
 		preprocessors: {
-			'test/*.js': ['browserify']
+			'test/*.js': ['browserify'],
+			'test/*.jsx': ['browserify']
 		},
 		reporters: ['mocha'],
 		port: 9876,
