@@ -1,0 +1,25 @@
+language: node_js
+
+env:
+  - MOZ_HEADLESS=1
+
+addons:
+  firefox: latest
+
+node_js:
+  - lts/*
+  - node
+
+before_script:
+  # Copied from Travis CI docs; starts fake X server
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3
+
+script:
+  - npm run build
+  - npm run test
+
+cache:
+  directories:
+    - "node_modules"
