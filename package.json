@@ -8,7 +8,8 @@
     "test": "lerna run test",
     "lint": "npm run -s pretest",
     "build": "lerna run build",
-    "fix": "xo --fix"
+    "fix": "xo --fix",
+    "prep": "lerna bootstrap"
   },
   "author": "thatlittlegit",
   "license": "BSD-3-Clause",
