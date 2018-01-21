@@ -4,11 +4,11 @@
   "private": true,
   "description": "Online word processor built with Rust, WebAssembly, React and Server.js",
   "scripts": {
-    "pretest": "xo",
+    "pretest": "lerna exec -- xo --ignore dist.js",
     "test": "lerna run test",
-    "lint": "npm run -s pretest",
+    "lint": "npm run pretest",
     "build": "lerna run build",
-    "fix": "xo --fix",
+    "fix": "lerna exec -- xo --prettier --fix --ignore dist.js",
     "prep": "lerna bootstrap"
   },
   "author": "thatlittlegit",
@@ -16,8 +16,5 @@
   "devDependencies": {
     "lerna": "^2.7.1",
     "xo": "^0.18.2"
-  },
-  "xo": {
-    "prettier": true
   }
 }
