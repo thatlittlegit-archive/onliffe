@@ -40,9 +40,24 @@ describe('Button', () => {
 	it('should create a <button> element with classes corresponding to `type` and `outline`', () => {
 		function testFunction(type) {
 			React.render(<Button outline type={type}>Hi</Button>, document.body);
-			$('body button').get(0).attr('class').should.match(new RegExp(`.*btn-outline-${type}.*`));
+			$('body button').hasClass(`btn-outline-${type}`).should.equal(true);
 		}
 
 		runCbWithAllButtonTypes(testFunction);
+	});
+
+	it('should create a <button> element which toggles according to `toggle`', () => {
+		// FIXME Fix this to not use setTimeout
+		React.render(<Button toggle="true"></Button>, document.body);
+		$('body button').hasClass('active').should.equal(true);
+		$('body button').click();
+
+		setTimeout(() => {
+			$('body button').hasClass('active').should.not.equal(true);
+			$('body button').click();
+			setTimeout(() => {
+				$('body button').hasClass('active').should.equal(true);
+			}, 500);
+		}, 500);
 	});
 });
