@@ -18,20 +18,20 @@ describe('Button', () => {
 
 	it('should create a <button> element with the `btn` class', () => {
 		React.render(<Button></Button>, document.body);
-		$('body button').get(0).attr('class').should.match(/.*btn.*/);
+		$('body button').hasClass('btn').should.equal(true);
 	});
 
 	it('should create a <button> element with the correct children', () => {
 		React.render(<Button>Hi</Button>, document.body);
-		$('body button').get(0).node.innerHTML.should.eql('Hi');
+		$('body button').html().should.eql('Hi');
 		React.render(<Button><p>Hi</p></Button>, document.body);
-		$('body button').get(0).n.innerHTML.should.eql('<p>Hi</p>');
+		$('body button').html().should.eql('<p>Hi</p>');
 	});
 
 	it('should create a <button> element with classes corresponding to `type`', () => {
 		function testFunction(type) {
 			React.render(<Button type={type}>Hi</Button>, document.body);
-			$('body button').get(0).attr('class').should.match(new RegExp(`.*btn-${type}.*`));
+			$('body button').hasClass(`btn-${type}`).should.equal(true);
 		}
 
 		runCbWithAllButtonTypes(testFunction);

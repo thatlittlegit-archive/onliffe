@@ -2,7 +2,7 @@
 /*
  * Headers for tests.
  */
-window.$ = require('vquery');
+window.$ = require('jquery');
 window.React = require('preact-compat');
 
 window.render = React.render;
